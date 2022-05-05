@@ -129,7 +129,9 @@ int32_t request_takephoto(string &request, string &response, Agent *agent)
     // any additional arguments to the agent request will be elements 1 and beyond
     vector<string> args = string_split(request);
     string result;
-    data_execute("python3 ~/raspicamera.py", result);
+
+    // assumes raspicamera.py is in the same file as the executable
+    data_execute("python3 ~/cosmos/bin/raspicamera.py", result);
     response = result;
 
     return 0;
