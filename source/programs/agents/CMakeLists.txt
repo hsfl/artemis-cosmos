@@ -15,5 +15,5 @@ target_link_libraries(agent CosmosAgent)
 install(TARGETS agent DESTINATION bin)
 
 
-target_link_libraries(agent_template ${COSMOS_LIBS})
+target_link_libraries(agent_artemis ${COSMOS_LIBS} CosmosData)
 
