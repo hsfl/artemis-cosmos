@@ -43,7 +43,7 @@ IF(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
         # Non-ARM Build Detected
 
         IF("$ENV{COSMOS}" STREQUAL "")
-            SET(COSMOS "/usr/local/cosmos")
+            SET(COSMOS "~/cosmos")
         ELSE()
             SET(COSMOS "$ENV{COSMOS}")
         ENDIF("$ENV{COSMOS}" STREQUAL "")
@@ -136,7 +136,7 @@ set(COSMOS_LIBS
 
 message("COSMOS: ${COSMOS}")
 
-set(CMAKE_INSTALL_PREFIX "${COSMOS}/${PROJECT_NAME}" CACHE PATH "default install path" FORCE )
+set(CMAKE_INSTALL_PREFIX "${COSMOS}" CACHE PATH "default install path" FORCE )
 message("Install: ${CMAKE_INSTALL_PREFIX}")
 
 include_directories(${COSMOS_INCLUDE_DIRS})
@@ -150,3 +150,4 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/libraries)
 #add_subdirectory(${COSMOS_SOURCE}/modules/devices/radio/isis/libraries/txs     ${CMAKE_BINARY_DIR}/libraries/isis/txs)
 
 add_subdirectory(${PROJECT_SOURCE_DIR}/programs)
+add_subdirectory(${PROJECT_SOURCE_DIR}/scripts)
